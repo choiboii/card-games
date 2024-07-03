@@ -2,6 +2,10 @@ import java.util.ArrayList;
 
 public class Player {
     ArrayList<Card> hand = new ArrayList<Card>();
+
+    public Player(){
+    }
+
     public Player(ArrayList<Card> deck){
         hand = deck;
     }

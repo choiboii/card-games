@@ -57,7 +57,9 @@ public class Ers{
 
         System.out.print("Which game would you like to play? (War/Blackjack/ERS): ");
         String game = scan.nextLine(); //use for later; for now, implement war
+
         
+
         for(int i = 0; i < deck.length; i++){
 
         }
