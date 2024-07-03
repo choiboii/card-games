@@ -14,7 +14,7 @@ public class Player {
     }
 
     public String toString(){
-        String result = "";
+        String result = this.name + "'s hand: (" + hand.size() + " cards)\n";
         for(int i = 0; i < hand.size() - 1; i++){
             result += hand.get(i) + " ";
         }
