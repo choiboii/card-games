@@ -1,13 +1,16 @@
 import java.util.ArrayList;
 
 public class Player {
+    String name;
     ArrayList<Card> hand = new ArrayList<Card>();
 
-    public Player(){
+    public Player(String name){
+        this.name = name;
     }
 
-    public Player(ArrayList<Card> deck){
-        hand = deck;
+    public Player(String name, ArrayList<Card> hand){
+        this.name = name;
+        this.hand = hand;
     }
 
     public String toString(){
