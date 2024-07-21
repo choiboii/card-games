@@ -40,7 +40,6 @@ public class Ers{
     public static void main(String args[]){
         Card[] deck = new Card[52];
         createDeck(deck);
-
         shuffle(deck);
 
         //for(int i = 0; i < deck.length; i++){
@@ -60,11 +59,11 @@ public class Ers{
 
         // System.out.print("Name for player 1: ");
         // String name = scan.next();
-        Player player1 = new Player("Andrew");
+        Player player1 = new Player("Player1");
 
         // System.out.print("Name for player 2: ");
         // name = scan.next();
-        Player player2 = new Player("Rachel");
+        Player player2 = new Player("Player2");
 
         for(int i = 0; i < deck.length; i++){
             if(i % 2 == 0){
