@@ -37,6 +37,20 @@ public class Ers{
         }
     }
 
+    public static int decideWinner(Card[] pile, Card card1, Card card2, int winner){
+        if(winner > 0){
+            return winner;
+        }
+        
+        /*
+         * returns winner once decided which player wins
+         * compares the two cards
+         * if there is a tie, burn one (add to pile), and then compare next card (recursive method)
+         * continue until there is winner decided
+         */
+
+    }
+
     public static void main(String args[]){
         Card[] deck = new Card[52];
         createDeck(deck);
@@ -104,7 +118,8 @@ public class Ers{
             pile.add(card1);
             pile.add(card2);
 
-            System.out.println(card1 + " VS " + card2);
+            //System.out.println(card1 + " VS " + card2);
+            System.out.println("Player 1 cards: " + player1.hand.size() + " vs. Player 2 cards: " + player2.hand.size());
             int winner = 0;
             //while winner of this bout is not yet decided:
             while(winner == 0){
@@ -115,27 +130,27 @@ public class Ers{
                     winner = 2;
                 }
                 else{ //in case of a tie
-                    if(player1.hand.size() < 3){
+                    if(player1.hand.size() < 2){
                         winner = 2;
+                        Card burn;
                         for(Card card : player1.hand){
-                            pile.add(card);
-                            player1.hand.remove(0);
+                            burn = player1.hand.remove(0);
+                            pile.add(burn);
                         }
                     }
-                    else if(player2.hand.size() < 3){
+                    else if(player2.hand.size() < 2){
                         winner = 1;
+                        Card burn;
                         for(Card card : player2.hand){
-                            pile.add(card);
-                            player2.hand.remove(0);
+                            burn = player2.hand.remove(0);
+                            pile.add(burn);
                         }
                     }
                     else{
-                        Card burn11 = player1.hand.remove(0);
-                        Card burn12 = player1.hand.remove(0);
-                        card1 = player1.hand.remove(0);
-                        Card burn21 = player2.hand.remove(0);
-                        Card burn22 = player2.hand.remove(0);
-                        card2 = player2.hand.remove(0);
+                        Card burn1 = player1.hand.remove(0);
+                        card1 = player1.hand.get(0);
+                        Card burn2 = player2.hand.remove(0);
+                        card2 = player2.hand.get(0);
                         System.out.println("Tie! New duel: " + card1 + " VS " + card2);
                     } 
                 }
